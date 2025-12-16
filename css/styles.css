@@ -677,11 +677,13 @@ button {
 .info__inner {
   margin: 0 auto;
   border: 3px solid #ecedf0;
-  border-radius: 12px;
+  border-radius: 0 12px 12px 0;
   overflow: hidden;
-  display: flex;
+  background: #fff;
   box-shadow: 12px 20px 40px rgba(15, 23, 42, 0.25);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  padding: 0;
 }
 
 .info__inner:hover {
@@ -690,24 +692,34 @@ button {
 
 .info__grid {
   width: 100%;
-  border-radius: 12px;
+  margin: 0;
+  padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
 }
 
 .info__card {
+  width: 100%;
   background: #ffffff;
-  border-radius: 0 12px 12px 0;
+  border-radius: 0;
+  box-shadow: none;
   padding: 1.4rem 1.6rem;
-  box-shadow: var(--shadow-card);
-  font-size: 0.88rem;
   padding-block: 5rem;
+}
+
+.info__card:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 .info__card--dark {
   background: #020617;
   color: #e5e7eb;
+}
+
+.info__card + .info__card {
+  border-left: 1px solid #ecedf0;
 }
 
 .info__title {
@@ -719,6 +731,15 @@ button {
   font-size: 32px;
   line-height: 48px;
   color: #03081f;
+}
+
+.info__title span {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: 0;
+  color: #f8f8f9;
 }
 
 .info__title img {
@@ -741,6 +762,14 @@ button {
   white-space: nowrap;
 }
 
+.schedule__label-op {
+  color: #f8f8f9;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 46px;
+  letter-spacing: 0;
+}
+
 .schedule__text {
   font-family: "Poppins", system-ui, sans-serif;
   font-size: 18px;
@@ -756,6 +785,14 @@ button {
   font-weight: 400;
   line-height: 46px;
   color: #000000;
+}
+
+.schedule__time-op {
+  color: #f8f8f9;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 46px;
+  letter-spacing: 0;
 }
 
 /* MAPA */
