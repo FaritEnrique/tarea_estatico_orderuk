@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>McDonald's East London</title>
+
+  <!-- TIPOGRAFÍAS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ========================================================= -->
+  <!-- HEADER -->
+  <!-- ========================================================= -->
+  <header class="header">
+    <div class="header__inner">
+
+      <div class="logo">
+        <img src="public/icons/LOGO 1.webp" alt="Order UK logo" class="logo__img" />
+      </div>
+
+      <div class="header-menu">
+        <nav class="nav">
+          <a href="#">Home</a>
+          <a href="#">Special Offers</a>
+          <a href="#" class="active">Restaurants</a>
+          <a href="#">Track Order</a>
+        </nav>
+
+        <button class="btn btn--dark" type="button">Login / Signup</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================= -->
+  <!-- HERO -->
+  <!-- ========================================================= -->
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="hero__text">
+        <p class="hero__eyebrow">I'm lovin' it!</p>
+        <h1 class="hero__title">McDonald's East London</h1>
+
+        <div class="hero__meta">
+          <span class="chip">
+            <img src="public/icons/icon-check-list.webp" alt="" aria-hidden="true">
+            Minimum Order: 12 GBP
+          </span>
+
+          <span class="chip">
+            <img src="public/icons/icon-motocross.webp" alt="" aria-hidden="true">
+            Delivery in 20–25 Minutes
+          </span>
+        </div>
+      </div>
+
+      <!-- COLUMNA DERECHA: IMAGEN + TARJETA 3.4 -->
+      <div class="hero__media">
+        <div class="hero__image-wrapper">
+          <img
+            src="public/images/hero-burger.webp"
+            class="hero__img"
+            alt="Featured burger"
+          />
+
+          <img src="public/images/Rectangle 64.webp" alt="Restaurant rating" class="rating">
+        </div>
+      </div>
+
+      <!-- BARRA NARANJA "OPEN UNTIL" -->
+      <button class="hero__btn" type="button">
+        <img src="public/icons/icon-clock.webp" alt="" aria-hidden="true">
+        <span>Open until 3:00 AM</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- STRIP -->
+  <!-- ========================================================= -->
+  <section class="strip">
+    <div class="strip__inner">
+      <p class="strip__title">All Offers from McDonald's East London</p>
+
+      <form class="search" role="search">
+        <label for="search-menu" class="sr-only">Search from menu ...</label>
+
+        <img src="public/icons/Search More.webp" alt="" aria-hidden="true">
+
+        <input
+          type="text"
+          id="search-menu"
+          name="search"
+          placeholder="Search menu..."
+          autocomplete="off"
+        >
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- TABS -->
+  <!-- ========================================================= -->
+  <section class="tabs">
+    <div class="tabs__inner">
+      <button class="tab active" type="button">Offers</button>
+      <button class="tab" type="button">Burgers</button>
+      <button class="tab" type="button">Fries</button>
+      <button class="tab" type="button">Snacks</button>
+      <button class="tab" type="button">Salads</button>
+      <button class="tab" type="button">Cold drinks</button>
+      <button class="tab" type="button">Happy Meal™</button>
+      <button class="tab" type="button">Desserts</button>
+      <button class="tab" type="button">Hot drinks</button>
+      <button class="tab" type="button">Sauces</button>
+      <button class="tab" type="button">Orbit™</button>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- TOP OFFERS -->
+  <!-- ========================================================= -->
+  <section class="offers">
+    <div class="grid-offers">
+
+      <article class="offer" style="background-image: url('public/images/Top-Offers/offer-discount-first-order.webp');">
+        <span class="offer__badge">-20%</span>
+        <div class="offer__body">
+          <small class="offer__label">McDonald's East London</small>
+          <h3 class="offer__title">First Order Discount</h3>
+        </div>
+      </article>
+
+      <article class="offer" style="background-image: url('public/images/Top-Offers/offer-discount-vegan.webp');">
+        <span class="offer__badge">-20%</span>
+        <div class="offer__body">
+          <small class="offer__label">McDonald's East London</small>
+          <h3 class="offer__title">Vegan Discount</h3>
+        </div>
+      </article>
+
+      <article class="offer" style="background-image: url('public/images/Top-Offers/offer-free-ice-cream.webp');">
+        <span class="offer__badge">-100%</span>
+        <div class="offer__body">
+          <small class="offer__label">McDonald's East London</small>
+          <h3 class="offer__title">Free Ice Cream Offer</h3>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- MENU – BURGERS (6 CARDS) -->
+  <!-- ========================================================= -->
+  <section class="menu">
+    <h2 class="menu__title">Burgers</h2>
+
+    <div class="menu__grid">
+
+      <!-- 1 -->
+      <article class="item">
+        <div class="item__body">
+          <h3 class="item__name">Royal Cheese Burger with extra fries</h3>
+          <p class="item__detalle">1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium</p>
+          <p class="item__price">GBP 23.10</p>
+        </div>
+        <div class="item__img-wrapper">
+          <img src="public/images/Burgers/imagen-1.1.webp" class="item__img" alt="Royal Cheese Burger with extra fries">
+          <div class="item__esquina">
+            <img src="public/images/Burgers/Plus.webp" alt="" aria-hidden="true" class="item__icono">
+          </div>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="item">
+        <div class="item__body">
+          <h3 class="item__name">The classics for 3</h3>
+          <p class="item__detalle">1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks</p>
+          <p class="item__price">GBP 23.10</p>
+        </div>
+        <div class="item__img-wrapper">
+          <img src="public/images/Burgers/imagen-1.2.webp" class="item__img" alt="The classics for 3">
+          <div class="item__esquina">
+            <img src="public/images/Burgers/Plus.webp" alt="" aria-hidden="true" class="item__icono">
+          </div>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="item">
+        <div class="item__body">
+          <h3 class="item__name">The classics for 3</h3>
+          <p class="item__detalle">1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized French Fries, 3 cold drinks</p>
+          <p class="item__price">GBP 23.10</p>
+        </div>
+        <div class="item__img-wrapper">
+          <img src="public/images/Burgers/imagen-1.3.webp" class="item__img" alt="The classics for 3">
+          <div class="item__esquina">
+            <img src="public/images/Burgers/Plus.webp" alt="" aria-hidden="true" class="item__icono">
+          </div>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="item">
+        <div class="item__body">
+          <h3 class="item__name">The classics for 3</h3>
+          <p class="item__detalle">1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized French Fries, 3 cold drink</p>
+          <p class="item__price">GBP 23.10</p>
+        </div>
+        <div class="item__img-wrapper">
+          <img src="public/images/Burgers/imagen-2.1.webp" class="item__img" alt="The classics for 3">
+          <div class="item__esquina">
+            <img src="public/images/Burgers/Plus.webp" alt="" aria-hidden="true" class="item__icono">
+          </div>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="item">
+        <div class="item__body">
+          <h3 class="item__name">The classics for 3</h3>
+          <p class="item__detalle">1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks</p>
+          <p class="item__price">GBP 23.10</p>
+        </div>
+        <div class="item__img-wrapper">
+          <img src="public/images/Burgers/imagen-2.2.webp" class="item__img" alt="The classics for 3">
+          <div class="item__esquina">
+            <img src="public/images/Burgers/Plus.webp" alt="" aria-hidden="true" class="item__icono">
+          </div>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="item">
+        <div class="item__body">
+          <h3 class="item__name">The classics for 3</h3>
+          <p class="item__detalle">McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks</p>
+          <p class="item__price">GBP 23.10</p>
+        </div>
+        <div class="item__img-wrapper">
+          <img src="public/images/Burgers/imagen-2.3.webp" class="item__img" alt="The classics for 3">
+          <div class="item__esquina">
+            <img src="public/images/Burgers/Plus.webp" alt="" aria-hidden="true" class="item__icono">
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- MENU – FRIES (6 CARDS) -->
+  <!-- ========================================================= -->
+  <section class="menu">
+    <h2 class="menu__title menu__title--accent">Fries</h2>
+
+    <div class="menu__grid">
+
+      <!-- 1 -->
+      <article class="item">
+        <div class="item__body">
+          <h3 class="item__name">Royal Cheese Burger with extra Fries</h3>
+          <p class="item__detalle">1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium</p>
+          <p class="item__price">GBP 23.10</p>
+        </div>
+        <div class="item__img-wrapper">
+          <img src="public/images/Fries/imagen-1.1.webp" class="item__img" alt="Royal Cheese Burger with extra Fries">
+          <div class="item__esquina">
+            <img src="public/images/Fries/Plus.webp" alt="" aria-hidden="true" class="item__icono">
+          </div>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="item">
+        <div class="item__body">
+          <h3 class="item__name">The classics for 3</h3>
+          <p class="item__detalle">1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks</p>
+          <p class="item__price">GBP 23.10</p>
+        </div>
+        <div class="item__img-wrapper">
+          <img src="public/images/Fries/imagen-1.2.webp" class="item__img" alt="The classics for 3">
+          <div class="item__esquina">
+            <img src="public/images/Fries/Plus.webp" alt="" aria-hidden="true" class="item__icono">
+          </div>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="item">
+        <div class="item__body">
+          <h3 class="item__name">The classics for 3</h3>
+          <p class="item__detalle">1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks</p>
+          <p class="item__price">GBP 23.10</p>
+        </div>
+        <div class="item__img-wrapper">
+          <img src="public/images/Fries/imagen-1.3.webp" class="item__img" alt="The classics for 3">
+          <div class="item__esquina">
+            <img src="public/images/Fries/Plus.webp" alt="" aria-hidden="true" class="item__icono">
+          </div>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="item">
+        <div class="item__body">
+          <h3 class="item__name">The classics for 3</h3>
+          <p class="item__detalle">1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks</p>
+          <p class="item__price">GBP 23.10</p>
+        </div>
+        <div class="item__img-wrapper">
+          <img src="public/images/Fries/imagen-2.1.webp" class="item__img" alt="The classics for 3">
+          <div class="item__esquina">
+            <img src="public/images/Fries/Plus.webp" alt="" aria-hidden="true" class="item__icono">
+          </div>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="item">
+        <div class="item__body">
+          <h3 class="item__name">The classics for 3</h3>
+          <p class="item__detalle">1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks</p>
+          <p class="item__price">GBP 23.10</p>
+        </div>
+        <div class="item__img-wrapper">
+          <img src="public/images/Fries/imagen-2.2.webp" class="item__img" alt="The classics for 3">
+          <div class="item__esquina">
+            <img src="public/images/Fries/Plus.webp" alt="" aria-hidden="true" class="item__icono">
+          </div>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="item">
+        <div class="item__body">
+          <h3 class="item__name">The classics for 3</h3>
+          <p class="item__detalle">1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks</p>
+          <p class="item__price">GBP 23.10</p>
+        </div>
+        <div class="item__img-wrapper">
+          <img src="public/images/Fries/imagen-2.3.webp" class="item__img" alt="The classics for 3">
+          <div class="item__esquina">
+            <img src="public/images/Fries/Plus.webp" alt="" aria-hidden="true" class="item__icono">
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- MENU – COLD DRINKS (6 CARDS) -->
+  <!-- ========================================================= -->
+  <section class="menu">
+    <h2 class="menu__title menu__title--accent">Cold Drinks</h2>
+
+    <div class="menu__grid">
+
+      <!-- 1 -->
+      <article class="item">
+        <div class="item__body">
+          <h3 class="item__name">Royal Cheese Burger with extra Fries</h3>
+          <p class="item__detalle">1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium</p>
+          <p class="item__price">GBP 23.10</p>
+        </div>
+        <div class="item__img-wrapper">
+          <img src="public/images/cold-drinks/imagen-1.1.webp" class="item__img" alt="Royal Cheese Burger with extra Fries">
+          <div class="item__esquina">
+            <img src="public/images/cold-drinks/Plus.webp" alt="" aria-hidden="true" class="item__icono">
+          </div>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="item">
+        <div class="item__body">
+          <h3 class="item__name">The classics for 3</h3>
+          <p class="item__detalle">1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks</p>
+          <p class="item__price">GBP 23.10</p>
+        </div>
+        <div class="item__img-wrapper">
+          <img src="public/images/cold-drinks/imagen-1.2.webp" class="item__img" alt="The classics for 3">
+          <div class="item__esquina">
+            <img src="public/images/cold-drinks/Plus.webp" alt="" aria-hidden="true" class="item__icono">
+          </div>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="item">
+        <div class="item__body">
+          <h3 class="item__name">The classics for 3</h3>
+          <p class="item__detalle">1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks</p>
+          <p class="item__price">GBP 23.10</p>
+        </div>
+        <div class="item__img-wrapper">
+          <img src="public/images/cold-drinks/imagen-1.3.webp" class="item__img" alt="The classics for 3">
+          <div class="item__esquina">
+            <img src="public/images/cold-drinks/Plus.webp" alt="" aria-hidden="true" class="item__icono">
+          </div>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="item">
+        <div class="item__body">
+          <h3 class="item__name">The classics for 3</h3>
+          <p class="item__detalle">1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks</p>
+          <p class="item__price">GBP 23.10</p>
+        </div>
+        <div class="item__img-wrapper">
+          <img src="public/images/cold-drinks/imagen-2.1.webp" class="item__img" alt="The classics for 3">
+          <div class="item__esquina">
+            <img src="public/images/cold-drinks/Plus.webp" alt="" aria-hidden="true" class="item__icono">
+          </div>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="item">
+        <div class="item__body">
+          <h3 class="item__name">The classics for 3</h3>
+          <p class="item__detalle">1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks</p>
+          <p class="item__price">GBP 23.10</p>
+        </div>
+        <div class="item__img-wrapper">
+          <img src="public/images/cold-drinks/imagen-2.2.webp" class="item__img" alt="The classics for 3">
+          <div class="item__esquina">
+            <img src="public/images/cold-drinks/Plus.webp" alt="" aria-hidden="true" class="item__icono">
+          </div>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="item">
+        <div class="item__body">
+          <h3 class="item__name">The classics for 3</h3>
+          <p class="item__detalle">1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks</p>
+          <p class="item__price">GBP 23.10</p>
+        </div>
+        <div class="item__img-wrapper">
+          <img src="public/images/cold-drinks/imagen-2.3.webp" class="item__img" alt="The classics for 3">
+          <div class="item__esquina">
+            <img src="public/images/cold-drinks/Plus.webp" alt="" aria-hidden="true" class="item__icono">
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- INFORMACIÓN + MAP -->
+  <!-- ========================================================= -->
+  <section class="infoMap">
+
+    <section class="info">
+      <div class="info__inner">
+        <div class="info__grid">
+
+          <article class="info__card">
+            <h3 class="info__title">
+              <img src="public/icons/icon-tracking.webp" alt="" aria-hidden="true">
+              Delivery information
+            </h3>
+            <div class="schedule">
+              <span class="schedule__label">Monday:</span>
+              <span class="schedule__time">12:00 AM-3:00 AM, 8:00 AM-3:00 AM</span>
+            </div>
+            <div class="schedule">
+              <span class="schedule__label">Tuesday:</span>
+              <span class="schedule__time">8:00 AM-3:00 AM</span>
+            </div>
+            <div class="schedule">
+              <span class="schedule__label">Wednesday:</span>
+              <span class="schedule__time">8:00 AM-3:00 AM</span>
+            </div>
+            <div class="schedule">
+              <span class="schedule__label">Thursday:</span>
+              <span class="schedule__time">8:00 AM-3:00 AM</span>
+            </div>
+            <div class="schedule">
+              <span class="schedule__label">Friday:</span>
+              <span class="schedule__time">8:00 AM-3:00 AM</span>
+            </div>
+            <div class="schedule">
+              <span class="schedule__label">Saturday:</span>
+              <span class="schedule__time">8:00 AM-3:00 AM</span>
+            </div>
+            <div class="schedule">
+              <span class="schedule__label">Sunday:</span>
+              <span class="schedule__time">8:00 AM-12:00 AM</span>
+            </div>
+            <div class="schedule">
+              <span class="schedule__label">Estimated time until delivery:</span>
+              <span class="schedule__time">20 min</span>
+            </div>
+          </article>
+
+          <article class="info__card">
+            <h3 class="info__title">
+              <img src="public/icons/icon-ID-Verified.webp" alt="" aria-hidden="true">
+              Contact information
+            </h3>
+            <div class="schedule__text">
+              <p class="schedule__time">If you have allergies or other dietary restriction, please contact the restaurant. The restaurant will provide food-specific information upon request.</p>
+              <p class="schedule__label">Phone number</p>
+              <p class="schedule__time">+934443-43</p>
+              <p class="schedule__label">Website</p>
+              <p class="schedule__time">http://macdonalds.uk/</p>
+            </div>
+          </article>
+
+          <article class="info__card info__card--dark">
+            <h3 class="info__title">
+              <img src="public/icons/icon-clock-oper.webp" alt="" aria-hidden="true">
+              Operational Times
+            </h3>
+            <div class="schedule">
+              <span class="schedule__label">Monday:</span>
+              <span class="schedule__time">8:00 AM-3:00 AM</span>
+            </div>
+            <div class="schedule">
+              <span class="schedule__label">Tuesday:</span>
+              <span class="schedule__time">8:00 AM-3:00 AM</span>
+            </div>
+            <div class="schedule">
+              <span class="schedule__label">Wednesday:</span>
+              <span class="schedule__time">8:00 AM-3:00 AM</span>
+            </div>
+            <div class="schedule">
+              <span class="schedule__label">Thursday:</span>
+              <span class="schedule__time">8:00 AM-3:00 AM</span>
+            </div>
+            <div class="schedule">
+              <span class="schedule__label">Friday:</span>
+              <span class="schedule__time">8:00 AM-3:00 AM</span>
+            </div>
+            <div class="schedule">
+              <span class="schedule__label">Saturday:</span>
+              <span class="schedule__time">8:00 AM-3:00 AM</span>
+            </div>
+            <div class="schedule">
+              <span class="schedule__label">Sunday:</span>
+              <span class="schedule__time">8:00 AM-12:00 AM</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="map">
+      <div class="map__inner">
+        <img src="public/images/Mapa.webp" class="map__img" alt="Map showing the restaurant location">
+
+        <div class="map__card">
+          <h3 class="map__card-nombre">McDonald's</h3>
+          <p class="map__card-ubicacion">South London</p>
+          <p class="map__card-direccion">Tooley St, London Bridge, London SEI 2TF,United Kingdom</p>
+          <p class="map__card-phone">Phone number</p>
+          <p class="map__card-numero">+934443-43</p>
+          <p class="map__card-phone">Website</p>
+          <p class="map__card-numero">http://macdonalds.uk/</p>
+        </div>
+      </div>
+    </section>
+
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- REVIEWS -->
+  <!-- ========================================================= -->
+  <section class="reviews">
+
+    <div class="reviews__inner">
+      <div class="reviews__header">
+        <h2 class="menu__title">Customer Reviews</h2>
+        <div class="reviews__arrows">
+          <button class="btn-circle" type="button" aria-label="Previous review">
+            <img src="public/icons/Back.webp" alt="" aria-hidden="true">
+          </button>
+          <button class="btn-circle" type="button" aria-label="Next review">
+            <img src="public/icons/Down.webp" alt="" aria-hidden="true">
+          </button>
+        </div>
+      </div>
+
+      <div class="reviews__grid">
+
+        <article class="review">
+          <div class="review__header">
+            <img src="public/icons/icon-avatar.webp" class="review__avatar" alt="Avatar of St Glx">
+            <div class="review__header-complement">
+              <div class="review__header-complement1">
+                <p class="review__name">St Glx</p>
+                <p class="review__direccion">South London</p>
+              </div>
+              <div class="review__header-complement2">
+                <img src="public/icons/Estrellas.webp" alt="Star rating" class="review__header-calification">
+                <div class="review__fecha-wrapper">
+                  <img src="public/icons/Time Span.webp" alt="" aria-hidden="true" class="review__header-icon">
+                  <span class="review__date">24th September 2023</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="review__text">
+            The positive aspect was undoubtedly the efficiency of the service. The queue moved quickly, the staff was friendly, and the food was up to the usual McDonald's standard hot and satisfying.
+          </p>
+        </article>
+
+        <article class="review">
+          <div class="review__header">
+            <img src="public/icons/icon-avatar.webp" class="review__avatar" alt="Avatar of Leo Stone">
+            <div class="review__header-complement">
+              <div class="review__header-complement1">
+                <p class="review__name">Leo Stone</p>
+                <p class="review__direccion">East London</p>
+              </div>
+              <div class="review__header-complement2">
+                <img src="public/icons/Estrellas.webp" alt="Star rating" class="review__header-calification">
+                <div class="review__fecha-wrapper">
+                  <img src="public/icons/Time Span.webp" alt="" aria-hidden="true" class="review__header-icon">
+                  <span class="review__date">29th September 2020</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="review__text">
+            The positive aspect was undoubtedly the efficiency of the service. The queue moved quickly, the staff was friendly, and the food was up to the usual McDonald's standard hot and satisfying.
+          </p>
+        </article>
+
+        <article class="review">
+          <div class="review__header">
+            <img src="public/icons/icon-avatar.webp" class="review__avatar" alt="Avatar of Leo Stone">
+            <div class="review__header-complement">
+              <div class="review__header-complement1">
+                <p class="review__name">Leo Stone</p>
+                <p class="review__direccion">West London</p>
+              </div>
+              <div class="review__header-complement2">
+                <img src="public/icons/Estrellas.webp" alt="Star rating" class="review__header-calification">
+                <div class="review__fecha-wrapper">
+                  <img src="public/icons/Time Span.webp" alt="" aria-hidden="true" class="review__header-icon">
+                  <span class="review__date">29th September 2020</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="review__text">
+            The positive aspect was undoubtedly the efficiency of the service. The queue moved quickly, the staff was friendly, and the food was up to the usual McDonald's standard hot and satisfying.
+          </p>
+        </article>
+
+      </div>
+
+      <div class="rating-total">
+        <img src="public/images/Rectangle 64.webp" alt="Overall rating">
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- SIMILAR RESTAURANTS -->
+  <!-- ========================================================= -->
+  <section class="similar">
+    <h2 class="similar__title">Similar Restaurants</h2>
+
+    <div class="similar__grid">
+
+      <div class="similar__card">
+        <img src="public/images/restaurants/imagen-1.1.webp" alt="McDonald's London">
+        <div class="similar__box">
+          <p class="similar__text">McDonald's London</p>
+        </div>
+      </div>
+
+      <div class="similar__card">
+        <img src="public/images/restaurants/imagen-1.2.webp" alt="Papa John's">
+        <div class="similar__box">
+          <p class="similar__text">Papa John's</p>
+        </div>
+      </div>
+
+      <div class="similar__card">
+        <img src="public/images/restaurants/imagen-1.3.webp" alt="KFC West London">
+        <div class="similar__box">
+          <p class="similar__text">KFC West London</p>
+        </div>
+      </div>
+
+      <div class="similar__card">
+        <img src="public/images/restaurants/imagen-1.4.webp" alt="Texas Chicken">
+        <div class="similar__box">
+          <p class="similar__text">Texas Chicken</p>
+        </div>
+      </div>
+
+      <div class="similar__card">
+        <img src="public/images/restaurants/imagen-1.5.webp" alt="Burger King">
+        <div class="similar__box">
+          <p class="similar__text">Burger King</p>
+        </div>
+      </div>
+
+      <div class="similar__card">
+        <img src="public/images/restaurants/imagen-1.6.webp" alt="Shauarma 1">
+        <div class="similar__box">
+          <p class="similar__text">Shauarma 1</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- FOOTER -->
+  <!-- ========================================================= -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__grid">
+
+        <div class="footer__brand">
+          <img src="public/icons/LOGO 2.webp" alt="Order logo">
+          <div class="descargas">
+            <img src="public/icons/AppStore.webp" alt="Download on the App Store">
+            <img src="public/icons/GooglePlay.webp" alt="Get it on Google Play">
+          </div>
+          <p>Company #490039-445, Registered with House of companies.</p>
+        </div>
+
+        <div class="footer__sociales">
+          <h4>Get Exclusive Deals in your inbox</h4>
+          <div class="footer__subscribe">
+            <input type="email" placeholder="youremail@gmail.com">
+            <button type="button">Subscribe</button>
+          </div>
+          <p class="footer__sociales--text">
+            we wont spam, read our email policy
+          </p>
+          <div class="social__icons">
+            <a href="#" aria-label="Facebook">
+              <img src="public/icons/Facebook.webp" alt="" aria-hidden="true">
+            </a>
+            <a href="#" aria-label="Instagram">
+              <img src="public/icons/Instagram.webp" alt="" aria-hidden="true">
+            </a>
+            <a href="#" aria-label="TikTok">
+              <img src="public/icons/TikTok.webp" alt="" aria-hidden="true">
+            </a>
+            <a href="#" aria-label="Snapchat">
+              <img src="public/icons/Snapchat.webp" alt="" aria-hidden="true">
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__legal">
+          <h4>Legal Pages</h4>
+          <ul>
+            <li><a href="#">Terms and conditions</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Cookies</a></li>
+            <li><a href="#">Modern Slavery Statement</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__important">
+          <h4>Important Links</h4>
+          <ul>
+            <li><a href="#">Get Help</a></li>
+            <li><a href="#">Add your restaurant</a></li>
+            <li><a href="#">Sign up to deliver</a></li>
+            <li><a href="#">Create a business account</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <section>
+      <div class="footer__blackbar">
+        <div class="footer__blackbar-inner">
+          <div class="footer__derechos">
+            <p>Order uk Copyright 2024, All Rights reserved.</p>
+          </div>
+          <div class="footer__links">
+            <p>Privacy Policy</p>
+            <p>Terms</p>
+            <p>Pricing</p>
+            <p>Do not sell or share my personal information</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </footer>
+
+</body>
+</html>
