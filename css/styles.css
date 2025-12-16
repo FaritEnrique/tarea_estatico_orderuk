@@ -19,7 +19,7 @@ body {
   color: #111827;
   background-color: #f3f4f6;
   line-height: 1.5;
-  overflow-x: hidden; /* evita scroll horizontal accidental */
+  overflow-x: hidden;
 }
 
 img {
@@ -57,6 +57,68 @@ button {
   --radius-pill: 999px;
   --shadow-soft: 0 24px 60px rgba(15, 23, 42, 0.12);
   --shadow-card: 0 16px 40px rgba(15, 23, 42, 0.08);
+
+  /* Layout system */
+  --container: 1528px;
+  --pad: 24px;
+}
+
+/* =====================================
+   LAYOUT SYSTEM (container único)
+   ✅ nuevo punto de quiebre 1200px
+===================================== */
+
+/* <= 1400px (suave) */
+@media (max-width: 1400px) {
+  :root {
+    --container: 1200px;
+  }
+}
+
+/* ✅ <= 1200px (clave) */
+@media (max-width: 1200px) {
+  :root {
+    --container: 1080px;
+    --pad: 24px;
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    --container: 960px;
+    --pad: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container: 100%;
+    --pad: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --pad: 14px;
+  }
+}
+
+/* Aplica container a todos los inner */
+.header__inner,
+.hero__inner,
+.strip__inner,
+.tabs__inner,
+.offers,
+.menu,
+.info__inner,
+.map__inner,
+.reviews__inner,
+.similar,
+.footer__inner,
+.footer__blackbar-inner {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--pad);
 }
 
 /* =====================================
@@ -67,13 +129,11 @@ button {
 }
 
 .header__inner {
-  max-width: 1528px;
   margin: 40px auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  padding: 0 24px;
   height: 64px;
 }
 
@@ -108,7 +168,6 @@ button {
 .nav a {
   position: relative;
   color: #64748b;
-  text-decoration: none;
   padding: 0.4rem 0;
   line-height: 1;
   white-space: nowrap;
@@ -135,8 +194,6 @@ button {
   font-size: 0.9rem;
   font-weight: 600;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
-  border: none;
-  margin: 0;
   line-height: 1;
   cursor: pointer;
   white-space: nowrap;
@@ -145,7 +202,6 @@ button {
 .btn--dark {
   background: var(--dark);
   color: #ffffff;
-  border-radius: var(--radius-pill);
 }
 
 .btn--dark:hover {
@@ -162,8 +218,6 @@ button {
 }
 
 .hero__inner {
-  max-width: 1528px;
-  margin-inline: auto;
   border-radius: var(--radius-lg);
   padding: 3rem 3rem 3.4rem;
   display: grid;
@@ -177,7 +231,7 @@ button {
   overflow: visible;
 }
 
-/* pequeño brillo de fondo como Figma */
+/* brillo */
 .hero__inner::before {
   content: "";
   position: absolute;
@@ -190,11 +244,11 @@ button {
   opacity: 0.8;
 }
 
-/* capa de contenido */
 .hero__text {
   position: relative;
   z-index: 1;
 }
+
 .hero__media {
   display: flex;
   justify-content: flex-end;
@@ -208,10 +262,8 @@ button {
   font-weight: 400;
   font-size: 20px;
   line-height: 66px;
-  letter-spacing: 0;
   opacity: 0.85;
   margin-bottom: 0.75rem;
-  color: #ffffff;
 }
 
 .hero__title {
@@ -219,15 +271,12 @@ button {
   font-weight: 600;
   font-size: 54px;
   line-height: 66px;
-  letter-spacing: 0;
   margin-bottom: 1.9rem;
-  color: #ffffff;
 }
 
 .hero__meta {
   display: flex;
   gap: 1.5rem;
-  margin-bottom: 0;
   flex-wrap: wrap;
 }
 
@@ -241,7 +290,6 @@ button {
   font-weight: 600;
   font-size: 18px;
   line-height: 36px;
-  letter-spacing: 0;
   background: rgba(15, 23, 42, 0.7);
   border: 1px solid rgba(148, 163, 184, 0.65);
   white-space: nowrap;
@@ -267,15 +315,36 @@ button {
   color: #ffffff;
   font-weight: 600;
   font-size: 0.95rem;
-  border: none;
   cursor: pointer;
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
+
 .hero__btn img {
   width: 29px;
   height: 29px;
   object-fit: contain;
-  display: block;
+}
+
+.hero__image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 581px;
+  aspect-ratio: 581 / 361;
+  flex: 0 1 581px;
+}
+
+.hero__img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.hero__image-wrapper:hover .hero__img {
+  outline: 4px solid #3b82f6;
+  outline-offset: 0;
+  border-radius: 12px;
+  transition: outline 0.2s ease-in-out;
 }
 
 .rating {
@@ -295,29 +364,6 @@ button {
   transition: outline 0.2s ease-in-out;
 }
 
-.hero__image-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 581px;
-  aspect-ratio: 581 / 361;
-  flex: 0 1 581px;
-}
-
-.hero__image-wrapper:hover .hero__img {
-  outline: 4px solid #3b82f6;
-  outline-offset: 0;
-  border-radius: 12px;
-  transition: outline 0.2s ease-in-out;
-}
-
-.hero__img {
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-  display: block;
-}
-
 /* =====================================
    STRIP (OFERTAS + BUSCADOR)
 ===================================== */
@@ -327,15 +373,13 @@ button {
 }
 
 .strip__inner {
-  max-width: 1528px;
   width: 100%;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 3rem;
-  padding-right: 3rem;
   gap: 1rem;
+  padding-left: calc(var(--pad) + 24px);
+  padding-right: calc(var(--pad) + 24px);
 }
 
 .strip__title {
@@ -343,9 +387,7 @@ button {
   font-weight: 700;
   font-size: 32px;
   line-height: 100%;
-  letter-spacing: 0;
   color: #111827;
-  margin: 0;
 }
 
 .search {
@@ -360,10 +402,9 @@ button {
   max-width: 320px;
   box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
   outline: 2px solid transparent;
-  outline-offset: 0;
   transition: outline 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
 }
+
 .search:hover,
 .search:focus-within {
   outline: 2px solid #3b82f6;
@@ -399,13 +440,9 @@ button {
 .tabs {
   padding-block: 1.4rem 2rem;
   background: var(--accent);
-  align-items: center;
-  justify-content: center;
-  will-change: transform;
 }
 
 .tabs__inner {
-  max-width: 1528px;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
@@ -418,7 +455,6 @@ button {
   font-size: 21px;
   font-weight: 700;
   line-height: 100%;
-  letter-spacing: 0;
   color: #ffffff;
   transition: transform 0.15s ease, background-color 0.15s ease,
     border-color 0.15s ease, color 0.15s ease;
@@ -441,10 +477,8 @@ button {
    TOP OFFERS
 ===================================== */
 .offers {
-  max-width: 1528px;
   margin: 0 auto;
   padding-block: 5rem 2rem;
-  padding-inline: 24px;
 }
 
 .grid-offers {
@@ -467,7 +501,6 @@ button {
   display: flex;
   align-items: flex-end;
   border: 3px solid transparent;
-  box-sizing: border-box;
   transition: transform 0.18s ease, border-color 0.3s ease,
     box-shadow 0.18s ease;
   cursor: pointer;
@@ -488,11 +521,9 @@ button {
   border-radius: 0 0 12px 12px;
   font-size: 18px;
   font-weight: 700;
-  line-height: 100%;
-  letter-spacing: 0;
+  display: flex;
   align-items: center;
   justify-content: center;
-  display: flex;
 }
 
 .offer__body {
@@ -506,7 +537,6 @@ button {
   font-size: 18px;
   font-weight: 500;
   line-height: 100%;
-  letter-spacing: 0;
   color: var(--accent);
 }
 
@@ -515,20 +545,17 @@ button {
   font-size: 32px;
   font-weight: 700;
   line-height: 100%;
-  letter-spacing: 0;
   color: white;
   margin-top: 0.25rem;
 }
 
 /* =====================================
-   MENÚ (BURGERS)
+   MENÚ
 ===================================== */
 .menu {
-  max-width: 1528px;
   margin: 0 auto;
   background: #f9fafb;
   padding-block: 3rem 1rem;
-  padding-inline: 24px;
 }
 
 .menu__title {
@@ -536,7 +563,6 @@ button {
   font-weight: 700;
   font-size: 44px;
   line-height: 100%;
-  letter-spacing: 0;
   margin-bottom: 2rem;
 }
 
@@ -544,6 +570,7 @@ button {
   color: #fc8a06;
 }
 
+/* ✅ MENU GRID 3/2/1 (sin duplicados) */
 .menu__grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -622,7 +649,6 @@ button {
   font-size: 20px;
   font-weight: 600;
   line-height: 23px;
-  letter-spacing: 0;
   color: var(--text-detalle);
 }
 
@@ -633,7 +659,6 @@ button {
   font-size: 14px;
   font-weight: 400;
   line-height: 25px;
-  letter-spacing: 0;
   color: var(--text-detalle);
 }
 
@@ -644,7 +669,6 @@ button {
   font-size: 18px;
   font-weight: 700;
   line-height: 100%;
-  letter-spacing: 0;
   color: #03081f;
 }
 
@@ -655,19 +679,15 @@ button {
   background: #ffffff;
   padding-top: 4rem;
   padding-bottom: 2rem;
-  padding-inline: 24px;
 }
 
-/* =====================================
-   INFO PANELS
-===================================== */
+/* INFO PANELS */
 .info {
   background: #ffffff;
   padding-block: 3rem;
 }
 
 .info__inner {
-  max-width: 1528px;
   margin: 0 auto;
   border: 3px solid #ecedf0;
   border-radius: 12px;
@@ -711,8 +731,12 @@ button {
   font-weight: 700;
   font-size: 32px;
   line-height: 48px;
-  letter-spacing: 0;
   color: #03081f;
+}
+
+.info__title img {
+  width: 45px;
+  height: 45px;
 }
 
 .schedule {
@@ -726,7 +750,6 @@ button {
   font-size: 18px;
   font-weight: 700;
   line-height: 46px;
-  letter-spacing: 0;
   color: #000000;
   white-space: nowrap;
 }
@@ -736,7 +759,6 @@ button {
   font-size: 18px;
   font-weight: 400;
   line-height: 46px;
-  letter-spacing: 0;
   color: #000000;
   margin-top: 1rem;
 }
@@ -746,18 +768,10 @@ button {
   font-size: 18px;
   font-weight: 400;
   line-height: 46px;
-  letter-spacing: 0;
   color: #000000;
 }
 
-.info__title img {
-  width: 45px;
-  height: 45px;
-}
-
-/* =====================================
-   MAPA
-===================================== */
+/* MAPA */
 .map {
   background: #ffffff;
   padding-block: 3rem;
@@ -765,7 +779,6 @@ button {
 
 .map__inner {
   background: #ffffff;
-  max-width: 1528px;
   width: 100%;
   aspect-ratio: 1528 / 659;
   margin: 0 auto;
@@ -790,7 +803,6 @@ button {
   object-fit: contain;
   object-position: center;
   border-radius: inherit;
-  display: block;
 }
 
 .map__card {
@@ -816,7 +828,6 @@ button {
   font-weight: 700;
   font-size: 32px;
   line-height: 38px;
-  letter-spacing: 0;
 }
 
 .map__card-ubicacion {
@@ -824,7 +835,6 @@ button {
   font-weight: 600;
   font-size: 22px;
   line-height: 38px;
-  letter-spacing: 0;
   color: #d97706;
 }
 
@@ -833,7 +843,6 @@ button {
   font-weight: 400;
   font-size: 18px;
   line-height: 31px;
-  letter-spacing: 0;
 }
 
 .map__card-phone {
@@ -841,7 +850,6 @@ button {
   font-weight: 700;
   font-size: 18px;
   line-height: 46px;
-  letter-spacing: 0;
 }
 
 .map__card-numero {
@@ -849,7 +857,6 @@ button {
   font-weight: 400;
   font-size: 22px;
   line-height: 46px;
-  letter-spacing: 0;
   color: #d97706;
 }
 
@@ -859,13 +866,11 @@ button {
 .reviews {
   background: lightgrey;
   padding-block: 2.4rem 2.8rem;
-  padding-inline: 24px;
 }
 
 .reviews__inner {
   position: relative;
   background: transparent;
-  max-width: 1528px;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
@@ -876,7 +881,6 @@ button {
 }
 
 .reviews__header {
-  background: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -888,7 +892,6 @@ button {
   max-width: 165px;
   width: 100%;
   aspect-ratio: 170 / 75;
-  background: transparent;
   display: flex;
   gap: 1rem;
   margin-right: 1rem;
@@ -922,12 +925,10 @@ button {
 }
 
 .review {
-  position: relative;
   background: #ffffff;
   padding: 1.1rem 1.2rem;
   box-shadow: var(--shadow-card);
   outline: 3px solid transparent;
-  outline-offset: 0;
   border-radius: 12px;
   transition: transform 0.18s ease, outline 0.2s ease-in-out,
     box-shadow 0.2s ease-in-out;
@@ -954,34 +955,29 @@ button {
 }
 
 .review__header-complement {
-  background: white;
   width: 100%;
-  border-left-width: 3px;
-  border-left-style: solid;
-  border-left-color: var(--accent);
-  padding: 1.2rem 1rem 1.2rem 1rem;
+  border-left: 3px solid var(--accent);
+  padding: 1.2rem 1rem;
   display: flex;
   gap: 0.4rem;
+  background: #ffffff;
 }
 
 .review__header-complement1 {
-  background: #ffffff;
   width: 100%;
   max-width: 140px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  right: 0;
 }
 
 .review__header-complement2 {
-  background: #ffffff;
   width: 100%;
   max-width: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
   margin-left: auto;
 }
 
@@ -990,7 +986,6 @@ button {
   font-size: 18px;
   font-weight: 600;
   line-height: 21px;
-  letter-spacing: 0;
   color: #000000;
 }
 
@@ -999,7 +994,6 @@ button {
   font-size: 16px;
   font-weight: 400;
   line-height: 21px;
-  letter-spacing: 0;
   color: var(--accent);
 }
 
@@ -1039,7 +1033,6 @@ button {
   font-weight: 400;
   font-size: 16px;
   line-height: 27px;
-  letter-spacing: 0;
   color: #000000;
 }
 
@@ -1058,7 +1051,6 @@ button {
   display: inline-block;
   background: white;
   outline: 3px solid transparent;
-  outline-offset: 0;
   transition: transform 0.18s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
 }
@@ -1067,7 +1059,6 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .rating-total:hover {
@@ -1079,11 +1070,9 @@ button {
    SIMILAR RESTAURANTS
 ===================================== */
 .similar {
-  max-width: 1528px;
   margin: 0 auto;
   background: #f3f4f6;
   padding-block: 2.2rem 2.8rem;
-  padding-inline: 24px;
 }
 
 .similar__title {
@@ -1091,7 +1080,6 @@ button {
   font-weight: 700;
   font-size: 32px;
   line-height: 100%;
-  letter-spacing: 0;
   color: #000000;
   margin-left: 1rem;
   margin-bottom: 2rem;
@@ -1143,7 +1131,6 @@ button {
   font-weight: 700;
   font-size: 18px;
   line-height: 100%;
-  letter-spacing: 0;
   text-align: center;
 }
 
@@ -1156,11 +1143,9 @@ button {
 }
 
 .footer__inner {
-  max-width: 1528px;
   margin: 0 auto;
   width: 100%;
   padding-bottom: 2rem;
-  padding-inline: 24px;
 }
 
 .footer__grid {
@@ -1183,7 +1168,6 @@ button {
   font-weight: 400;
   font-size: 15px;
   line-height: 100%;
-  letter-spacing: 0;
   color: #000000;
   margin-top: 1rem;
 }
@@ -1199,7 +1183,6 @@ button {
   font-weight: 700;
   font-size: 18px;
   line-height: 43px;
-  letter-spacing: 0;
   color: #000000;
 }
 
@@ -1208,7 +1191,6 @@ button {
   font-weight: 400;
   font-size: 13px;
   line-height: 43px;
-  letter-spacing: 0;
   color: #000000;
   margin-left: 2rem;
 }
@@ -1222,22 +1204,15 @@ button {
   flex-wrap: wrap;
 }
 
-.social__icons a {
-  display: inline-block;
-  cursor: pointer;
-  text-decoration: none;
-}
-
 .social__icons img {
   width: 45px;
   height: 45px;
   object-fit: contain;
-  transition: transform 0.3s ease, border 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .social__icons a:hover img {
   transform: scale(1.1);
-  border-color: #3b82f6;
 }
 
 .footer__subscribe {
@@ -1282,62 +1257,32 @@ button {
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
-.footer__legal {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.footer__legal h4 {
-  font-family: "Poppins", system-ui, sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 43px;
-  letter-spacing: 0;
-  color: #03081f;
-}
-
-.footer__legal ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer__legal ul li {
-  font-family: "Poppins", system-ui, sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 43px;
-  letter-spacing: 0;
-  color: #000000;
-  text-decoration: underline;
-}
-
+.footer__legal,
 .footer__important {
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
+.footer__legal h4,
 .footer__important h4 {
   font-family: "Poppins", system-ui, sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 43px;
-  letter-spacing: 0;
   color: #03081f;
 }
 
+.footer__legal ul,
 .footer__important ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
+.footer__legal ul li,
 .footer__important ul li {
   font-family: "Poppins", system-ui, sans-serif;
   font-weight: 400;
   font-size: 15px;
   line-height: 43px;
-  letter-spacing: 0;
   color: #000000;
   text-decoration: underline;
 }
@@ -1349,13 +1294,11 @@ button {
 }
 
 .footer__blackbar-inner {
-  max-width: 1528px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.25rem;
-  padding-inline: 24px;
   flex-wrap: wrap;
 }
 
@@ -1364,7 +1307,6 @@ button {
   font-weight: 400;
   font-size: 15px;
   line-height: 100%;
-  letter-spacing: 0;
   color: #ffffff;
   padding-left: 1rem;
 }
@@ -1380,50 +1322,46 @@ button {
   font-weight: 400;
   font-size: 15px;
   line-height: 100%;
-  letter-spacing: 0;
   color: #ffffff;
   transition: scale 0.3s ease;
-  display: inline-block;
 }
 
 .footer__links p:hover {
   text-decoration: underline;
-  scale: 1.1;
+  scale: 1.05;
   cursor: pointer;
 }
 
 /* =====================================
-   RESPONSIVE (PRO)
-   Breakpoints: 1400 / 1200 / 992 / 768 / 640 / 480
+   UX PREMIUM – ACTIVE STATES
 ===================================== */
-
-/* --------- <= 1400px --------- */
-@media (max-width: 1400px) {
-  .header__inner,
-  .hero__inner,
-  .strip__inner,
-  .tabs__inner,
-  .offers,
-  .menu,
-  .infoMap,
-  .reviews__inner,
-  .similar,
-  .footer__inner {
-    max-width: 1200px;
-  }
-
-  .hero__inner {
-    column-gap: 2.5rem;
-    padding: 2.5rem 2.5rem 3rem;
-  }
-
-  .tabs__inner {
-    justify-content: flex-start;
-    gap: 0.6rem;
-  }
+.item:active {
+  transform: scale(0.98);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+.offer:active {
+  transform: scale(0.97);
+}
+.review:active {
+  transform: scale(0.985);
+}
+.tab:active {
+  transform: scale(0.95);
+  background: rgba(0, 0, 0, 0.15);
+}
+.btn:active,
+.btn-circle:active,
+.hero__btn:active,
+.footer__subscribe button:active {
+  transform: scale(0.96);
 }
 
-/* --------- <= 1200px (Laptop/Tablet grande) --------- */
+/* =====================================
+   RESPONSIVE (Breakpoints reales)
+   1200 / 992 / 768 / 640 / 480
+===================================== */
+
+/* ✅ <= 1200px */
 @media (max-width: 1200px) {
   .header__inner {
     margin: 24px auto;
@@ -1456,8 +1394,38 @@ button {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  /* ✅ tabs scroll horizontal desde 1200 */
+  .tabs {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  }
+
+  .tabs__inner {
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+  }
+
+  .tabs__inner::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  /* ✅ menu 2 cols */
   .menu__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .item {
+    max-width: 100%;
   }
 
   .reviews__grid {
@@ -1467,28 +1435,9 @@ button {
   .similar__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-
-  /* Sticky tabs útil en tablet */
-  .tabs {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
-  }
-
-  /* tabs en scroll horizontal */
-  .tabs__inner {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding-inline: 24px;
-  }
-  .tabs__inner::-webkit-scrollbar {
-    display: none;
-  }
 }
 
-/* --------- <= 992px (Tablet) --------- */
+/* ✅ <= 992px */
 @media (max-width: 992px) {
   .header__inner {
     height: auto;
@@ -1537,8 +1486,8 @@ button {
   }
 
   .strip__inner {
-    padding-left: 1.8rem;
-    padding-right: 1.8rem;
+    padding-left: var(--pad);
+    padding-right: var(--pad);
   }
 
   .strip__title {
@@ -1595,17 +1544,18 @@ button {
   }
 }
 
-/* --------- <= 768px (Mobile grande) --------- */
+/* ✅ <= 768px */
 @media (max-width: 768px) {
   .header__inner {
     flex-direction: column;
     align-items: flex-start;
-    padding: 0 16px;
+    gap: 12px;
   }
 
   .header-menu {
     width: 100%;
     justify-content: space-between;
+    gap: 12px;
   }
 
   .nav {
@@ -1646,8 +1596,8 @@ button {
   .strip__inner {
     flex-direction: column;
     align-items: stretch;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: var(--pad);
+    padding-right: var(--pad);
   }
 
   .strip__title {
@@ -1676,8 +1626,10 @@ button {
     margin-bottom: 1.25rem;
   }
 
+  /* ✅ menu 1 col */
   .menu__grid {
     grid-template-columns: 1fr;
+    gap: 0.9rem;
   }
 
   .item {
@@ -1685,6 +1637,7 @@ button {
     aspect-ratio: auto;
     grid-template-columns: 1fr;
     gap: 12px;
+    padding: 1rem;
   }
 
   .item__img-wrapper,
@@ -1696,12 +1649,15 @@ button {
 
   .item__body {
     max-width: 100%;
+    width: 100%;
     aspect-ratio: auto;
-    padding: 0.25rem 0 0.75rem;
+    padding: 0;
+    gap: 0.35rem;
   }
 
   .item__name,
-  .item__detalle {
+  .item__detalle,
+  .item__price {
     max-width: 100%;
   }
 
@@ -1737,15 +1693,53 @@ button {
   .footer__blackbar-inner {
     flex-direction: column;
     align-items: flex-start;
-    padding-inline: 16px;
   }
 
   .footer__derechos p {
     padding-left: 0;
   }
+
+  /* ✅ FIX REVIEWS header stack */
+  .review__header {
+    align-items: flex-start;
+  }
+
+  .review__header-complement {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    padding: 0.9rem;
+  }
+
+  .review__header-complement1,
+  .review__header-complement2 {
+    max-width: none;
+    width: 100%;
+  }
+
+  .review__header-complement2 {
+    align-items: flex-start;
+    margin-left: 0;
+    gap: 0.5rem;
+  }
+
+  .review__header-calification {
+    margin-left: 0;
+  }
+
+  .review__fecha-wrapper {
+    justify-content: flex-start;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .review__date {
+    font-size: 14px;
+    line-height: 1.2;
+  }
 }
 
-/* --------- <= 640px (Mobile) --------- */
+/* ✅ <= 640px */
 @media (max-width: 640px) {
   .tabs {
     padding-block: 0.9rem 1.1rem;
@@ -1761,7 +1755,7 @@ button {
     font-size: 26px;
   }
 
-  /* reduce sombras pesadas */
+  /* sombras más ligeras */
   .item,
   .offer,
   .review,
@@ -1769,7 +1763,7 @@ button {
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
   }
 
-  /* elimina outlines hover inútiles en touch */
+  /* hover outlines en touch: fuera */
   .rating:hover,
   .rating-total:hover {
     outline: none;
@@ -1818,14 +1812,9 @@ button {
     font-size: 16px;
     line-height: 30px;
   }
-
-  p,
-  span {
-    -webkit-tap-highlight-color: transparent;
-  }
 }
 
-/* --------- <= 480px (Mobile pequeño) --------- */
+/* ✅ <= 480px */
 @media (max-width: 480px) {
   .hero__inner {
     padding: 1.25rem 1rem 1.5rem;
@@ -1854,163 +1843,13 @@ button {
   .footer__links {
     gap: 1rem;
   }
-}
 
-/* =====================================
-   UX PREMIUM – TACTIL + ACTIVE STATES
-===================================== */
-.item:active {
-  transform: scale(0.98);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
-}
-.offer:active {
-  transform: scale(0.97);
-}
-.review:active {
-  transform: scale(0.985);
-}
-.tab:active {
-  transform: scale(0.95);
-  background: rgba(0, 0, 0, 0.15);
-}
-.btn:active,
-.btn-circle:active,
-.hero__btn:active,
-.footer__subscribe button:active {
-  transform: scale(0.96);
-}
-
-/* =====================================
-   FIX REVIEWS HEADER – MOBILE STACK
-   (Nombre/ubicación arriba, estrellas/fecha abajo)
-===================================== */
-@media (max-width: 768px) {
-  .review__header {
-    align-items: flex-start;
-  }
-
-  .review__header-complement {
-    flex-direction: column; /* ✅ apila */
-    align-items: stretch; /* ocupa ancho completo */
-    gap: 0.75rem;
-    padding: 0.9rem 0.9rem;
-  }
-
-  /* ✅ quitar límites que generan overflow en mobile */
-  .review__header-complement1,
-  .review__header-complement2 {
-    max-width: none;
-    width: 100%;
-  }
-
-  /* ✅ este bloque ahora va “debajo” y se alinea a la izquierda */
-  .review__header-complement2 {
-    align-items: flex-start;
-    margin-left: 0;
-    gap: 0.5rem;
-  }
-
-  /* estrellas y fecha alineadas y sin desbordar */
-  .review__header-calification {
-    margin-left: 0;
-  }
-
-  .review__fecha-wrapper {
-    justify-content: flex-start;
-    gap: 0.6rem;
-    flex-wrap: wrap; /* ✅ si el texto es largo, baja */
-  }
-
-  /* opcional: texto de fecha un poquito más compacto */
-  .review__date {
-    font-size: 14px;
-    line-height: 1.2;
-  }
-}
-
-/* Extra: si quieres que en móviles MUY pequeños sea aún más compacto */
-@media (max-width: 480px) {
-  .review__header-complement {
-    padding: 0.8rem 0.8rem;
-  }
-
+  /* reviews más compactas */
   .review__name {
     font-size: 16px;
   }
 
   .review__direccion {
     font-size: 14px;
-  }
-}
-
-/* =====================================
-   RESPONSIVE – MENU GRID (1 / 2 / 3)
-===================================== */
-
-/* Base: desktop queda en 3 (ya lo tienes, esto solo lo reafirma) */
-.menu__grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-/* <= 1200px: 2 columnas (tablet / laptop chica) */
-@media (max-width: 1200px) {
-  .menu__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  /* para que no se quede “chico” por el max-width */
-  .item {
-    max-width: 100%;
-  }
-}
-
-/* <= 768px: 1 columna (móvil) */
-@media (max-width: 768px) {
-  .menu {
-    padding-inline: 1rem;
-  }
-
-  .menu__grid {
-    grid-template-columns: 1fr;
-    gap: 0.9rem;
-  }
-
-  /* la card deja de forzar layout horizontal cuando el ancho es mínimo */
-  .item {
-    grid-template-columns: 1fr; /* texto arriba, imagen abajo */
-    aspect-ratio: auto; /* evita cortes raros */
-    padding: 1rem;
-  }
-
-  .item__body {
-    max-width: none;
-    width: 100%;
-    aspect-ratio: auto;
-    padding: 0;
-    gap: 0.35rem;
-  }
-
-  .item__name,
-  .item__detalle,
-  .item__price {
-    max-width: none;
-  }
-
-  .item__img-wrapper {
-    max-width: none;
-    width: 100%;
-    aspect-ratio: 16 / 10; /* mantiene proporción agradable */
-  }
-
-  .item__img {
-    max-width: none;
-    width: 100%;
-    height: 100%;
-  }
-
-  .item__esquina {
-    max-width: 74px; /* un toque más compacto en móvil */
   }
 }
