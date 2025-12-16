@@ -58,24 +58,16 @@ button {
   --shadow-soft: 0 24px 60px rgba(15, 23, 42, 0.12);
   --shadow-card: 0 16px 40px rgba(15, 23, 42, 0.08);
 
-  /* Layout system */
   --container: 1528px;
   --pad: 24px;
 }
 
-/* =====================================
-   LAYOUT SYSTEM (container único)
-   ✅ nuevo punto de quiebre 1200px
-===================================== */
-
-/* <= 1400px (suave) */
 @media (max-width: 1400px) {
   :root {
     --container: 1200px;
   }
 }
 
-/* ✅ <= 1200px (clave) */
 @media (max-width: 1200px) {
   :root {
     --container: 1080px;
@@ -103,7 +95,6 @@ button {
   }
 }
 
-/* Aplica container a todos los inner */
 .header__inner,
 .hero__inner,
 .strip__inner,
@@ -156,7 +147,6 @@ button {
   align-items: center;
 }
 
-/* NAV */
 .nav {
   display: flex;
   align-items: center;
@@ -184,7 +174,6 @@ button {
   padding: 0.4rem 1rem;
 }
 
-/* BOTÓN LOGIN */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -231,7 +220,6 @@ button {
   overflow: visible;
 }
 
-/* brillo */
 .hero__inner::before {
   content: "";
   position: absolute;
@@ -570,7 +558,6 @@ button {
   color: #fc8a06;
 }
 
-/* ✅ MENU GRID 3/2/1 (sin duplicados) */
 .menu__grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1036,7 +1023,6 @@ button {
   color: #000000;
 }
 
-/* rating total */
 .rating-total {
   position: absolute;
   left: 50%;
@@ -1361,7 +1347,6 @@ button {
    1200 / 992 / 768 / 640 / 480
 ===================================== */
 
-/* ✅ <= 1200px */
 @media (max-width: 1200px) {
   .header__inner {
     margin: 24px auto;
@@ -1394,7 +1379,6 @@ button {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  /* ✅ tabs scroll horizontal desde 1200 */
   .tabs {
     position: sticky;
     top: 0;
@@ -1419,7 +1403,6 @@ button {
     scroll-snap-align: start;
   }
 
-  /* ✅ menu 2 cols */
   .menu__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1437,7 +1420,6 @@ button {
   }
 }
 
-/* ✅ <= 992px */
 @media (max-width: 992px) {
   .header__inner {
     height: auto;
@@ -1544,7 +1526,6 @@ button {
   }
 }
 
-/* ✅ <= 768px */
 @media (max-width: 768px) {
   .header__inner {
     flex-direction: column;
@@ -1626,7 +1607,6 @@ button {
     margin-bottom: 1.25rem;
   }
 
-  /* ✅ menu 1 col */
   .menu__grid {
     grid-template-columns: 1fr;
     gap: 0.9rem;
@@ -1699,7 +1679,6 @@ button {
     padding-left: 0;
   }
 
-  /* ✅ FIX REVIEWS header stack */
   .review__header {
     align-items: flex-start;
   }
@@ -1739,7 +1718,6 @@ button {
   }
 }
 
-/* ✅ <= 640px */
 @media (max-width: 640px) {
   .tabs {
     padding-block: 0.9rem 1.1rem;
@@ -1755,7 +1733,6 @@ button {
     font-size: 26px;
   }
 
-  /* sombras más ligeras */
   .item,
   .offer,
   .review,
@@ -1763,7 +1740,6 @@ button {
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
   }
 
-  /* hover outlines en touch: fuera */
   .rating:hover,
   .rating-total:hover {
     outline: none;
@@ -1814,7 +1790,6 @@ button {
   }
 }
 
-/* ✅ <= 480px */
 @media (max-width: 480px) {
   .hero__inner {
     padding: 1.25rem 1rem 1.5rem;
@@ -1844,7 +1819,6 @@ button {
     gap: 1rem;
   }
 
-  /* reviews más compactas */
   .review__name {
     font-size: 16px;
   }
